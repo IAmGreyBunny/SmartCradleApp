@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "918118766321",
+    "project_id": "iot-smart-cradle",
+    "storage_bucket": "iot-smart-cradle.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918118766321:android:372bbb8dd2e03b41927b50",
+        "android_client_info": {
+          "package_name": "com.example.smartcradleapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "918118766321-r9h2d8fm846678clgr4sinnvj0gst6td.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfEmPXQqoC3A0GRpeWrQGutKWjeGaMYXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "918118766321-r9h2d8fm846678clgr4sinnvj0gst6td.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     //onClick listener for login button
-    public void loginButtonClick(View v){
+    public void onLoginButtonClick(View v){
 
         //Gets user input
         String email =  emailEditText.getText().toString().trim();
@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
 
     //onClick listener for register button
     //Change activity to Register Activity
-    public void registerButtonClick(View v){
+    public void onRegisterButtonClick(View v){
         Log.d("registerButtonClick","Transferring to register page...");
         Intent launchRegisterActivity = new Intent(this,RegisterActivity.class);
         startActivity(launchRegisterActivity);

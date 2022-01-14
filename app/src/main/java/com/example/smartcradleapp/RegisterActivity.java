@@ -46,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
     }
 
-    public void registerButtonClick(View v) {
+    public void onRegisterButtonClick(View v) {
 
         //Gets user input
         String username = usernameEditText.getText().toString().trim();

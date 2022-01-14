@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/SmartCradleApp/app/src/main/res/layout/activity_account.xml" value="0.33061594202898553" />
+        <entry key="..\:/SmartCradleApp/app/src/main/res/layout/activity_camera_feed.xml" value="0.33061594202898553" />
         <entry key="..\:/SmartCradleApp/app/src/main/res/layout/activity_login.xml" value="0.20520833333333333" />
         <entry key="..\:/SmartCradleApp/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
         <entry key="..\:/SmartCradleApp/app/src/main/res/layout/activity_main_menu.xml" value="0.33605072463768115" />
         <entry key="..\:/SmartCradleApp/app/src/main/res/layout/activity_register.xml" value="0.36594202898550726" />
+        <entry key="..\:/SmartCradleApp/app/src/main/res/layout/activity_settings.xml" value="0.33061594202898553" />
+        <entry key="..\:/SmartCradleApp/app/src/main/res/layout/activity_statistics.xml" value="0.33061594202898553" />
       </map>
     </option>
   </component>

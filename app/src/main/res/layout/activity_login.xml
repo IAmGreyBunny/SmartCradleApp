@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:onClick="loginButtonClick"
+                android:onClick="onLoginButtonClick"
                 android:padding="5dp"
                 android:text="Log In" />
 
@@ -86,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:onClick="registerButtonClick"
+                android:onClick="onRegisterButtonClick"
                 android:padding="5dp"
                 android:text="Register" />
         </LinearLayout>

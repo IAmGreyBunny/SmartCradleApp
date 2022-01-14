@@ -1,9 +1,7 @@
 package com.example.smartcradleapp;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -11,13 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.regex.Pattern;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -37,7 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         // Assign UI Elements
-        usernameEditText = (EditText) findViewById(R.id.usernameEditText);
+        usernameEditText = (EditText) findViewById(R.id.rpiAddressEditText);
         emailEditText = (EditText) findViewById(R.id.emailEditText);
         passwordEditText = (EditText) findViewById(R.id.passwordEditText);
         confirmPasswordEditText = (EditText) findViewById(R.id.confirmPasswordEditText);
@@ -108,6 +101,21 @@ public class RegisterActivity extends AppCompatActivity {
                                 Log.d("Complete Registration","Added User Data To Database");
                             }
                         });
+
+                //Adds Default Setting values to RTDB
+                Settings settings = new Settings("192.168.1.100:4000","192.168.1.101:5000");
+                firebaseDatabase.getReference("Users")
+                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                        .child("Settings")
+                        .setValue(settings);
+
+                //Adds Default Detection values to RTDB
+                Detections detections = new Detections(0,0);
+                firebaseDatabase.getReference("Users")
+                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                        .child("Detections")
+                        .setValue(detections);
+
 
                 //Goes back to Login Page(Incomplete)
                 //Creates alertbox for successful registration instead of toast to make this less confusing

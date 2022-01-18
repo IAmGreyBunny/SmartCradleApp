@@ -57,7 +57,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     public void onSaveSettingsButtonClick(View v)
     {
-        //Validation to be added later
+        //VALIDATION TO BE ADDED LATER
 
         //Gets input data and store in an object
         settings.rpiAddress = rpiAddressEditText.getText().toString();

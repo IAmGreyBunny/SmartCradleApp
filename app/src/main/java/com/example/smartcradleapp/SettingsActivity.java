@@ -21,8 +21,7 @@ public class SettingsActivity extends AppCompatActivity {
     //Declaration of UI Elements
     EditText rpiAddressEditText;
     EditText webappAddressEditText;
-    Button changeRpiAddressButton;
-    Button changeWebappAddressButton;
+    Button saveSettingsButton;
     DatabaseReference mDatabase = FirebaseDatabase.getInstance("https://iot-smart-cradle-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
     Settings settings;
 
@@ -34,8 +33,8 @@ public class SettingsActivity extends AppCompatActivity {
         // Assigning UI Elements
         rpiAddressEditText = findViewById(R.id.rpiAddressEditText);
         webappAddressEditText = findViewById(R.id.webappAddressEditText);
-        changeRpiAddressButton= findViewById(R.id.changeRpiAddressButton);
-        changeWebappAddressButton = findViewById(R.id.changeWebappAddressButton);
+        saveSettingsButton= findViewById(R.id.saveSettingsButton);
+
 
 
         //Add listener to user setting from firebase rtdb
@@ -56,13 +55,16 @@ public class SettingsActivity extends AppCompatActivity {
         mDatabase.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Settings").addValueEventListener(settingsListener);
     }
 
-    public void onChangeRpiAddressButtonClick(View v)
+    public void onSaveSettingsButtonClick(View v)
     {
+        //Validation to be added later
 
+        //Gets input data and store in an object
+        settings.rpiAddress = rpiAddressEditText.getText().toString();
+        settings.webappAddress = webappAddressEditText.getText().toString();
+
+        //Set new setting values in firebase
+        mDatabase.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Settings").setValue(settings);
     }
 
-    public void onChangeWebappAddressButtonClick(View v)
-    {
-
-    }
 }

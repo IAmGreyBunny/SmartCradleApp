@@ -22,6 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:onClick="onViewCameraFeedButtonClick"
             android:padding="5dp"
             android:text="View Camera Feed" />
 
@@ -31,6 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:onClick="onStatisticsButtonClick"
             android:padding="5dp"
             android:text="Statistics" />
 
@@ -40,6 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:onClick="onAccountButtonClick"
             android:padding="5dp"
             android:text="Account" />
 
@@ -49,6 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:onClick="onSettingsButtonClick"
             android:padding="5dp"
             android:text="Settings" />
 
@@ -58,6 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:onClick="onLogoutButtonClick"
             android:padding="5dp"
             android:text="Log out" />
 

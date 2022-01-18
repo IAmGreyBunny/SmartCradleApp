@@ -22,7 +22,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     // Firebase Auth Instance
     FirebaseAuth mAuth;
-    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance("https://iot-smart-cradle-default-rtdb.asia-southeast1.firebasedatabase.app/");
+    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://iot-smart-cradle-default-rtdb.asia-southeast1.firebasedatabase.app/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +92,7 @@ public class RegisterActivity extends AppCompatActivity {
                 User user = new User(username, email);
 
                 //Sends Data(username, email) To RTDB
-                firebaseDatabase.getReference("Users")
+                mDatabase.getReference("Users")
                         .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                         .setValue(user).addOnCompleteListener(
                         task1 -> {
@@ -104,14 +104,14 @@ public class RegisterActivity extends AppCompatActivity {
 
                 //Adds Default Setting values to RTDB
                 Settings settings = new Settings("192.168.1.100:4000","192.168.1.101:5000");
-                firebaseDatabase.getReference("Users")
+                mDatabase.getReference("Users")
                         .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                         .child("Settings")
                         .setValue(settings);
 
                 //Adds Default Detection values to RTDB
                 Detections detections = new Detections(0,0);
-                firebaseDatabase.getReference("Users")
+                mDatabase.getReference("Users")
                         .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                         .child("Detections")
                         .setValue(detections);

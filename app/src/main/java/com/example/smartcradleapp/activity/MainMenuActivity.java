@@ -1,4 +1,4 @@
-package com.example.smartcradleapp;
+package com.example.smartcradleapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.smartcradleapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainMenuActivity extends AppCompatActivity {
@@ -26,12 +27,6 @@ public class MainMenuActivity extends AppCompatActivity {
     public void onStatisticsButtonClick(View v){
         Intent moveToStatisticsPage = new Intent(MainMenuActivity.this,StatisticsActivity.class);
         startActivity(moveToStatisticsPage);
-    }
-
-    //Move to Account Page
-    public void onAccountButtonClick(View v){
-        Intent moveToAccountPage = new Intent(MainMenuActivity.this,AccountActivity.class);
-        startActivity(moveToAccountPage);
     }
 
     //Move to Settings Page

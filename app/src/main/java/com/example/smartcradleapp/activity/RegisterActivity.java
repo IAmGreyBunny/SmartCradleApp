@@ -1,4 +1,4 @@
-package com.example.smartcradleapp;
+package com.example.smartcradleapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.smartcradleapp.Detections;
+import com.example.smartcradleapp.R;
+import com.example.smartcradleapp.Settings;
+import com.example.smartcradleapp.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 

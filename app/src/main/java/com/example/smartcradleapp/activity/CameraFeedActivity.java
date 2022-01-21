@@ -1,8 +1,10 @@
-package com.example.smartcradleapp;
+package com.example.smartcradleapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.smartcradleapp.R;
 
 public class CameraFeedActivity extends AppCompatActivity {
 

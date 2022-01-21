@@ -1,14 +1,21 @@
-package com.example.smartcradleapp;
+package com.example.smartcradleapp.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.smartcradleapp.MonitoringService;
+import com.example.smartcradleapp.R;
+import com.example.smartcradleapp.Settings;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -34,8 +41,6 @@ public class SettingsActivity extends AppCompatActivity {
         rpiAddressEditText = findViewById(R.id.rpiAddressEditText);
         webappAddressEditText = findViewById(R.id.webappAddressEditText);
         saveSettingsButton= findViewById(R.id.saveSettingsButton);
-
-
 
         //Add listener to user setting from firebase rtdb
         ValueEventListener settingsListener = new ValueEventListener() {
@@ -65,6 +70,17 @@ public class SettingsActivity extends AppCompatActivity {
 
         //Set new setting values in firebase
         mDatabase.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Settings").setValue(settings);
+    }
+
+    public void startBabyMonitoringService(View v){
+        Intent serviceIntent  = new Intent(this, MonitoringService.class);
+        startService(serviceIntent);
+    }
+
+    public void stopBabyMonitoringService(View v)
+    {
+        Intent serviceIntent  = new Intent(this,MonitoringService.class);
+        stopService(serviceIntent);
     }
 
 }

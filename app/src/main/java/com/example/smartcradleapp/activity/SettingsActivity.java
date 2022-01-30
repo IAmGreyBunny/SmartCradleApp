@@ -26,7 +26,7 @@ public class SettingsActivity extends AppCompatActivity {
     EditText rpiAddressEditText;
     EditText webappAddressEditText;
     Button saveSettingsButton;
-    DatabaseReference mDatabase = FirebaseDatabase.getInstance("https://iot-smart-cradle-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
+    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     Settings settings;
 
     @Override
@@ -54,7 +54,9 @@ public class SettingsActivity extends AppCompatActivity {
                 Log.d("listener","settings values listener failed");
             }
         };
-        mDatabase.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Settings").addValueEventListener(settingsListener);
+        mDatabase.child("Users")
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Settings")
+                .addValueEventListener(settingsListener);
     }
 
     //changes settings in firebase rtdb

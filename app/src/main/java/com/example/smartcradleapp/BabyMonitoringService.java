@@ -30,7 +30,7 @@ import java.io.IOException;
 
 public class BabyMonitoringService extends Service {
 
-    DatabaseReference mDatabase = FirebaseDatabase.getInstance("https://iot-smart-cradle-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
+    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     Detections detections;
     MediaPlayer mediaPlayer = new MediaPlayer();
 
@@ -86,13 +86,15 @@ public class BabyMonitoringService extends Service {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Log.d("listener","settings values listener failed");
+                Log.d("listener","values listener failed");
             }
         };
-        mDatabase.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Detections").addValueEventListener(detectionsListener);
+        mDatabase.child("Users").child(FirebaseAuth.getInstance()
+                .getCurrentUser().getUid()).child("Detections")
+                .addValueEventListener(detectionsListener);
 
         startForeground(1,notification);
-
+        //Log.d("listener","settings values listener failed");
         return START_NOT_STICKY;
     }
 

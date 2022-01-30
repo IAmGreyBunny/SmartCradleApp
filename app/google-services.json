@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "918118766321",
-    "project_id": "iot-smart-cradle",
-    "storage_bucket": "iot-smart-cradle.appspot.com"
+    "project_number": "432700799356",
+    "firebase_url": "https://smartcradle-42496-default-rtdb.firebaseio.com",
+    "project_id": "smartcradle-42496",
+    "storage_bucket": "smartcradle-42496.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:918118766321:android:372bbb8dd2e03b41927b50",
+        "mobilesdk_app_id": "1:432700799356:android:53a6fc3d7fc2d777974cf9",
         "android_client_info": {
           "package_name": "com.example.smartcradleapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "918118766321-r9h2d8fm846678clgr4sinnvj0gst6td.apps.googleusercontent.com",
+          "client_id": "432700799356-4uldjgt2jbe80f131ohmsnn4ak7nfsh7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDfEmPXQqoC3A0GRpeWrQGutKWjeGaMYXo"
+          "current_key": "AIzaSyDpbNlMlfUjCRl-bldVHU7IlwB-LnvMTdk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "918118766321-r9h2d8fm846678clgr4sinnvj0gst6td.apps.googleusercontent.com",
+              "client_id": "432700799356-4uldjgt2jbe80f131ohmsnn4ak7nfsh7.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

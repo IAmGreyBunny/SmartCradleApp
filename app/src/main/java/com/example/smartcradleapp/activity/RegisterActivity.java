@@ -26,7 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     // Firebase Auth Instance
     FirebaseAuth mAuth;
-    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://iot-smart-cradle-default-rtdb.asia-southeast1.firebasedatabase.app/");
+    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SeekBar;
 
 import com.example.smartcradleapp.BabyMonitoringService;
 import com.example.smartcradleapp.R;
@@ -25,6 +26,8 @@ public class SettingsActivity extends AppCompatActivity {
     //Declaration of UI Elements
     EditText rpiAddressEditText;
     EditText webappAddressEditText;
+    SeekBar swingMotorSlider;
+    SeekBar toyMotorSlider;
     Button saveSettingsButton;
     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     Settings settings;
@@ -38,6 +41,8 @@ public class SettingsActivity extends AppCompatActivity {
         rpiAddressEditText = findViewById(R.id.rpiAddressEditText);
         webappAddressEditText = findViewById(R.id.webappAddressEditText);
         saveSettingsButton= findViewById(R.id.saveSettingsButton);
+        swingMotorSlider = findViewById(R.id.swingMotorSlider);
+        toyMotorSlider = findViewById(R.id.toyMotorSlider);
 
         //Add listener to user setting from firebase rtdb
         ValueEventListener settingsListener = new ValueEventListener() {
@@ -46,6 +51,8 @@ public class SettingsActivity extends AppCompatActivity {
                 settings = snapshot.getValue(Settings.class);
                 rpiAddressEditText.setText(settings.rpiAddress);
                 webappAddressEditText.setText(settings.webappAddress);
+                swingMotorSlider.setProgress(settings.swingMotorStrength);
+                toyMotorSlider.setProgress(settings.toyMotorStrength);
                 Log.d("listener","setting text to: " + settings.rpiAddress + "," + settings.webappAddress);
             }
 
@@ -67,6 +74,8 @@ public class SettingsActivity extends AppCompatActivity {
         //Gets input data and store in an object
         settings.rpiAddress = rpiAddressEditText.getText().toString();
         settings.webappAddress = webappAddressEditText.getText().toString();
+        settings.toyMotorStrength = toyMotorSlider.getProgress();
+        settings.swingMotorStrength = swingMotorSlider.getProgress();
 
         //Set new setting values in firebase
         mDatabase.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Settings").setValue(settings);

@@ -107,7 +107,7 @@ public class RegisterActivity extends AppCompatActivity {
                         });
 
                 //Adds Default Setting values to RTDB
-                Settings settings = new Settings("192.168.1.100:4000","192.168.1.101:5000");
+                Settings settings = new Settings("192.168.1.100:4000","192.168.1.101:5000",20,20);
                 mDatabase.getReference("Users")
                         .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                         .child("Settings")

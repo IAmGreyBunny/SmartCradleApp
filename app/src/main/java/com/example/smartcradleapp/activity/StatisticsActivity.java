@@ -87,6 +87,8 @@ public class StatisticsActivity extends AppCompatActivity {
         humidityGraph.getGridLabelRenderer().setHorizontalLabelsAngle(45);
         temperatureGraph.getGridLabelRenderer().setNumHorizontalLabels(10);
         humidityGraph.getGridLabelRenderer().setNumHorizontalLabels(10);
+        temperatureGraph.setScaleX(1);
+        humidityGraph.setScaleX(1);
 
         //Add listener to sensors from firebase rtdb
         ValueEventListener sensorsListener = new ValueEventListener() {
